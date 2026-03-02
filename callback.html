@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QuickBooks Authorization – AJA Trading LLC</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; max-width: 700px; margin: 60px auto; padding: 0 24px; color: #333; line-height: 1.7; }
+    h1 { font-size: 1.5em; color: #2d7a2d; }
+    .box { background: #f4f8f4; border: 1px solid #c3ddc3; border-radius: 8px; padding: 20px 24px; margin: 24px 0; word-break: break-all; font-family: monospace; font-size: 0.9em; }
+    label { font-weight: bold; display: block; margin-bottom: 4px; }
+    .value { background: #fff; border: 1px solid #ddd; border-radius: 4px; padding: 8px 12px; margin-bottom: 16px; }
+    .instructions { background: #fffbe6; border: 1px solid #ffe58f; border-radius: 8px; padding: 16px 20px; margin-top: 24px; }
+  </style>
+</head>
+<body>
+  <h1>✓ QuickBooks Authorization Successful</h1>
+  <p>Copy the values below and paste them back into Claude.</p>
+
+  <div class="box">
+    <label>Authorization Code:</label>
+    <div class="value" id="code">—</div>
+
+    <label>Realm ID (Company ID):</label>
+    <div class="value" id="realmId">—</div>
+
+    <label>State:</label>
+    <div class="value" id="state">—</div>
+  </div>
+
+  <div class="instructions">
+    <strong>Next step:</strong> Copy the Authorization Code and Realm ID above and paste them into Claude. Claude will exchange the code for tokens automatically.
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    document.getElementById('code').textContent = params.get('code') || '(not found)';
+    document.getElementById('realmId').textContent = params.get('realmId') || '(not found)';
+    document.getElementById('state').textContent = params.get('state') || '(not found)';
+  </script>
+</body>
+</html>
